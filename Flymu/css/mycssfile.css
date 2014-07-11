@@ -1,0 +1,221 @@
+/* Sticky footer and main style elements
+-------------------------------------------------- */
+html 
+{
+	position: relative;
+	min-height: 100%;
+}
+
+body 
+{
+	background-color:#CED9BC;
+
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+	padding-top: 100px;
+	overflow:hidden;
+}
+
+.footer 
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align:center;
+
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #3C5B45;
+}
+
+
+.container 
+{
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted 
+{
+  margin: 20px 0;
+}
+
+.main_title {
+	font-size: 3.8em;
+	font-family: 'Tauri', Helvetica, Arial, sans-serif;
+	color: #fff;
+	margin-top:0px;
+}
+
+p {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
+	color: #333;
+}
+
+.main_description{
+	color: #fff;
+}
+
+.logo
+{
+	border-radius: 40px;
+}
+
+.top-toolbar{
+  width:100%;
+  padding: 4px 0;
+  height: 44px;
+  z-index: 100;
+  position:absolute;
+  background: #54bd24;
+  box-shadow: 1px -2px 5px #000;
+}
+
+.top-toolbar .container{
+	width: 890px;
+	max-width:none;
+}
+
+.top-toolbar .btn{
+  margin-right:10px;
+}
+
+.toolbar-text
+{
+  margin-top:8px;
+}
+
+.top-toolbar p{
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+}
+
+.mini-logo{
+  width:500px;
+  margin-right:1000px;
+}
+
+/** Form elements */
+
+.form-elements
+{
+	padding-right: 0px;
+	margin: 8px 0 0 0;
+}
+
+.button{
+	color: #fff;
+	background: #aaa;
+	border:0;
+}
+
+.button:active{
+	padding-top:7px;
+
+	-webkit-box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.35);
+	-moz-box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.35);
+	box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.35);
+}
+
+
+.fb_login_button{
+	background: #356BA7;
+}
+
+.fb_login_button:hover{
+	background: #255c9a;
+}
+
+.generate_button{
+	background: #E48719;
+}
+
+.generate_button:hover{
+	background: #dd8216; /* idea cb5158 */
+}
+
+.logged_in{
+	background: #4A709B;
+}
+
+.event_url_field
+{
+	text-align:center;
+	background: #eeeeee;
+
+}
+
+/* prevents right padding bug on text field */
+.has-feedback
+.form-control
+{
+	padding-right: 0px;
+}
+
+.form_column{
+	padding: 40px 0 0 0;
+}
+
+/* Overlay */
+
+.overlay_wrapper{
+	
+	background-color:#54bd24;
+	display:none;
+	position: absolute; top: 0; left: 0;
+	width: 1000%; height: 1000%;
+	z-index: 10;
+}
+
+.overlay{
+	overflow-y: scroll;
+	background-color: #fff;
+	position: absolute; top: 0; left: 0;
+	width: 70%; height: 100%;
+	margin-left: 15%;
+
+	width: 890px;
+	margin: 0 0 0 -445px;
+	left: 50%;
+	padding: 0 68px;
+}
+
+#fb_like_button
+{
+	position:absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.aloha-sidebar-bar.aloha-sidebar-right{
+	display:none;
+}
+
+/* usable to change tooltip color */
+
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-right-color: #ddd;
+  border-width: 5px 5px 5px 0;
+}
+
+.tooltip-inner {
+  color: #000;
+  background: #ddd;
+  border: solid 1px #ddd;
+  min-width: 100px;
+}
+
+/** mobile notification */
+#mobile-note
+{
+	display: none;
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px)
+{
+  #mobile-note { display: block; }  /* show it on small screens */
+}

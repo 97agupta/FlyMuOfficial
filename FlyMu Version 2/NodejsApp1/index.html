@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flymu</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/mycssfile.css" rel="stylesheet">
+    <link href="css/flyer.css" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!--<link href="css/bootstrap.css" rel="stylesheet" /> -->
+    <!--<link href="css/background-orange.css" rel="stylesheet" />
+    <link href="css/background-yellow.css" rel="stylesheet" /> -->
+    <script type="text/javascript" src="aloha/lib/require.js"></script>
+    <script type="text/javascript" src="aloha/lib/vendor/jquery-1.7.2.js"></script>
+
+
+    <script type="text/javascript">
+        Aloha = {};
+        Aloha.settings = {
+            sidebar: { disabled: true },
+            plugins: {
+                format: {
+                    hotKey: { formatPre: 'alt+ctrl+p', }
+                },
+                alignment: {
+                    config: ['right', 'left', 'center', 'justify'],
+
+                    editables: {
+                        '#one': ['right', 'left'],
+                        '#two': [],
+                        '#three': ['left', 'right', 'top', 'middle', 'bottom']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- load the Aloha Editor core and some plugins -->
+    <script src="aloha/lib/aloha.js"
+            data-aloha-plugins="common/ui,
+                        common/format,
+                        common/list,
+                        common/link,
+                        common/align ">
+    </script>
+
+    <!-- load the Aloha Editor CSS styles -->
+    <link href="aloha/css/aloha.css" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" rel="stylesheet" media="print">
+    <link href="css/padding.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="main_index">
+        <div class="container">
+            <div id="mobile-note" class="alert alert-warning">Hello! Please note that while <b>flymu</b> displays on mobile devices and tablets, only devices that can print can really benefit from <b>flymu</b>.</div>
+
+            <div class="row">
+                <div class="col-sm-4 col-sm-pull-1">
+                    <img alt="flyMu" src="images/ostrich.png" height="200" width="200">
+                </div>
+
+                <div class="form_column col-sm-6 col-sm-offset-1">
+
+                    <h1 class="main_title">FlyMu</h1>
+
+                    <p class="main_description">
+                        Make a print-ready flyer from a Facebook event.
+                    </p>
+
+                    <div id="link_field" class="form-group has-feedback form-elements">
+                        <input type="text" name="url_field" class="event_url_field form-elements form-control" placeholder="paste a Facebook event link" data-toggle="tooltip" data-placement="right" title="please enter an event url.">
+                    </div>
+
+                    <button type="button" class="fb_login_button button form-elements form-control" data-toggle="tooltip" data-placement="right" title="You're in!">login to Facebook</button>
+
+                    <button type="button" class="generate_button form-elements form-control button">customize flyer</button>
+
+                </div><!-- /form_column -->
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <p class="text-muted"><b>FlyMu</b> is made by Aman, Shivani, and Amukta.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="overlay_wrapper" class="overlay_wrapper">
+        <div class="top-toolbar no-print">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <img alt="flyMu" src="images/icon_32009.png" height="36" width="36">
+                        <p class="toolbar-text">
+                            Click a section below to edit.
+                        </p>
+                    </div>
+                    <div class="col-sm-8">
+
+                        <button type="button" class="btn btn-danger btn-md close-flyer pull-right">
+                            <span class="glyphicon glyphicon-remove"></span> Close
+                        </button>
+
+                        <button type="button" class="btn btn-success btn-md print-button pull-right">
+                            <span class="glyphicon glyphicon-print"></span> Print
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-md start-over pull-right">
+                            <span class="glyphicon glyphicon-repeat"></span> Start Over
+                        </button>
+
+                        <button type="button" class="btn btn-primary btn-md toggle-image pull-right">
+                            <span class="glyphicon glyphicon-picture"></span> Toggle Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="flyer_main">
+                <div class="flyer_when editable"></div>
+                <div class="flyer_title editable"></div>
+                <div class="flyer_image">
+                    <div class="flyer_image_overlay hidden">
+                        Click to remove image.
+                    </div>
+                </div>
+                <div class="flyer_where editable"></div>
+                <div class="flyer_description editable"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>S
+    <script src="js/fb.js"></script>
+    <script src="js/flyer_writer.js"></script>
+    <script src="js/app.js"></script>
+
+        <!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                
+                    <a class="navbar-brand" href="#"><img src="images/FlyMuLogo.PNG" alt="" /></a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mainContent" class=" container">
+            <div class="jumbotron other-color">
+                <h1>Flymu</h1>
+                <h3>Convert Facebook events to flyers!</h3>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="jumbotron other-color2">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-success" type="button">
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </button>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Copy/Paste URL">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        <script type="text/javascript">
+            Aloha.ready(function () {
+                Aloha.jQuery('#content').aloha();
+            });
+        </script>
+
+        <div class="footer">
+            <div class="container">
+                <center>
+                    <p class="text-muted"><b>FlyMu</b> is made by Aman, Shivani, and Amukta.</p>
+                </center>
+            </div>
+        </div>
+
+</body>
+</html>
